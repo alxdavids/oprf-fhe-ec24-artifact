@@ -825,7 +825,6 @@ class ModSwitchBootstrap(BlindRotation):
         original_a = []
         for i in range(self.n):
             this_a = rotated_ct[i].coefficients(sparse=False)
-            print("this_a", len(this_a))
             avec = [this_a[0]] + [-1 * this_a[N - i] for i in range(1, N)]
             original_a += avec
 
