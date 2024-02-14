@@ -18,3 +18,16 @@
 
 - [Sage implementation](sage/README.md)
 - [Rust benchmarking implementation](rust/README.md)
+
+## Missing functionality
+
+The following summarises missing functionality from our implementations.
+
+**Sage code**:
+- Zero-knowledge proofs (i.e. not verifiable)
+
+**Rust code**:
+- Zero-knowledge proofs (i.e. not verifiable)
+- Circuit-private bootstrapping (since non-power-of-two `q` is not supported in tfhe-rs v0.3.1)
+- Depth-one correctness (since modified test polynomials and `p != 3` are not supported in tfhe-rs v0.3.1)
+- Public-key compression

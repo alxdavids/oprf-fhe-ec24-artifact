@@ -1,12 +1,11 @@
 # Rust implementation <!-- omit in toc -->
 
-Instructions on how to run Rust benchmarking software.
+Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://github.com/zama-ai/tfhe-rs/releases/tag/0.3.1) (version 0.3.1).
 
 - [Environment setup](#environment-setup)
 - [Building, testing, documentation](#building-testing-documentation)
 - [Benchmarking](#benchmarking)
 - [Example run](#example-run)
-- [Missing functionality](#missing-functionality)
 
 
 ## Environment setup
@@ -73,10 +72,3 @@ The `cargo run` command can be run with the following environment variables:
 The `cargo run` command also saves various cryptographic material to the
 `data/` folder to speed up subsequent run-throughs. Delete this folder
 to trigger sampling of a new key.
-
-## Missing functionality
- 
-- Circuit-private bootstrapping
-- Public-key compression
-- Zero-knowledge proofs (i.e. not verifiable)
-- Depth-one correctness (since modified test polynomials are not supported)
