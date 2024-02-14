@@ -1,0 +1,78 @@
+# Rust implementation <!-- omit in toc -->
+
+Instructions on how to run Rust benchmarking software.
+
+- [Environment setup](#environment-setup)
+- [Building, testing, documentation](#building-testing-documentation)
+- [Benchmarking](#benchmarking)
+- [Example run](#example-run)
+- [Missing functionality](#missing-functionality)
+
+
+## Environment setup
+
+First, update your version of rust to the latest version:
+```bash
+rustup update
+```
+
+The following commands can be used for building and running the code.
+Note that the `--release` flag is used to speed up compiled code.
+
+## Building, testing, documentation
+
+Build code binary:
+```bash
+cargo build --release
+```
+
+Run all tests:
+```bash
+cargo test --release
+```
+
+Open documentation in web browser:
+```bash
+cargo doc --open --no-deps
+```
+
+## Benchmarking
+
+Our benchmarks include performance measurements for client query generation, server homomorphic PRF evaluation, and client finalisation of the output.
+
+To benchmark the implementation (**WARNING: this could take a long time, and require large amounts of CPU and memory.**), you can use the following command:
+```bash
+make bench-paper
+```
+
+The default number of threads used is 64. To alter the number of threads (e.g. to 16) that are used in the benchmark, you can use:
+```bash
+THREADS=16 make bench-paper
+```
+
+The benchmarking tool will generate a text file, where a standard output for a single piece of functionality takes the form below.
+```
+FHE OPRF benchmarks/Client: generate encrypted request (λ: "100")
+                        time:   [32.467 ms 32.755 ms 33.081 ms]
+```
+The numbers above can be interpreted as minimum, average, maximum. Each benchmark will run for `λ: "100"` and `λ: "128"` bits of security.
+
+## Example run
+
+Debug run (including output of various runtime parameters):
+```
+<OPTIONAL_ENV_VARIABLE>=<VALUE> cargo run --release
+```
+
+The `cargo run` command can be run with the following environment variables:
+
+- `METADATA`: changes the metadata string that is used (default: "some_metadata");
+- `CLIENT_ONLY`: boolean to trigger only client-side functionality;
+- `SERVER_ONLY`: boolean to trigger only server-side functionality.
+
+The `cargo run` command also saves various cryptographic material to the
+`data/` folder to speed up subsequent run-throughs. Delete this folder
+to trigger sampling of a new key.
+
+## Missing functionality
+ 

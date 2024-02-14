@@ -1,62 +1,20 @@
-# FHE OPRF implementation
+# Software Artifact: "Crypto Dark Matter on the Torus: Oblivious PRFs from shallow PRFs and FHE"
 
-Rust implementation of FHE-based Oblivious Pseudorandom Function
-protocol functionality, using the
-[tfhe-rs](https://github.com/zama-ai/tfhe-rs)
-FHE crate.
+**Description**: Software implementations of the oblivious pseudorandom function protocol
 
-## Quickstart
+- Sage (`sage/`): Near fully-featured implementation of protocol, demonstrating functionality and correctness of approach.
+- Rust (`rust/`): Benchmarking implementation for estimating performance of core oblivious pseudorandom function protocol.
 
-First, update your version of rust to the latest version:
-```
-rustup update
-```
+**Paper** (full version): <https://eprint.iacr.org/2023/232>
 
-The following commands can be used for building and running the code.
-Note that the `--release` flag is used to speed up compiled code.
+## Authors
 
-Build:
-```
-cargo build --release
-```
+- [Martin R. Albrecht](https://malb.io)
+- [Alex Davidson](https://alxdavids.xyz)
+- [Amit Deo](https://scholar.google.com/citations?user=TPREbisAAAAJ&hl=en)
+- [Daniel Gardham](https://www.surrey.ac.uk/people/daniel-gardham)
 
-Run tests:
-```
-cargo test --release
-```
+## Instructions for use
 
-Open documentation in web browser:
-```
-cargo doc --open --no-deps
-```
-
-Benchmarking:
-```
-make bench-paper
-```
-
-## Example run
-
-Debug run (including output of various runtime parameters):
-```
-<OPTIONAL_ENV_VARIABLE>=<VALUE> cargo run --release
-```
-
-The `cargo run` command can be run with the following environment variables:
-
-- `METADATA`: changes the metadata string that is used (default: "some_metadata");
-- `CLIENT_ONLY`: boolean to trigger only client-side functionality;
-- `SERVER_ONLY`: boolean to trigger only server-side functionality.
-
-The `cargo run` command also saves various cryptographic material to the
-`data/` folder to speed up subsequent run-throughs. Delete this folder
-to trigger sampling of a new key.
-
-## Parallelism
-
-By default, this implementation will attempt to parallelize vector-matrix
-multiplications, by processing each matrix column in a separate thread.
-If you would like to change the number of threads that should be used
-you prefix your `cargo` command with `RAYON_NUM_THREADS=x` where `x` is
-the number of permitted threads.
-
+- [Sage implementation](sage/README.md)
+- [Rust benchmarking implementation](rust/README.md)
