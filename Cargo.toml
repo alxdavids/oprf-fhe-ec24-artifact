@@ -1,0 +1,25 @@
+[package]
+name = "oprf-fhe"
+version = "0.0.1"
+edition = "2018"
+resolver = "2"
+
+[dependencies]
+bitvec = "1"
+bincode = "1"
+serde = "1"
+tfhe = { version = "0.3.1", features = ["shortint", "x86_64-unix"] }
+rand = "0.8.5"
+rand_core = "0.6.3"
+rayon = "1.5.3"
+sha2 = "0.10.6"
+
+[dev-dependencies]
+criterion = "0.4.0"
+
+[profile.release]
+lto = "fat"
+
+[[bench]]
+name = "bench"
+harness = false

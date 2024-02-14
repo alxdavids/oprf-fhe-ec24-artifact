@@ -1,0 +1,31 @@
+pub const PARAM_100: tfhe::shortint::parameters::ClassicPBSParameters = tfhe::shortint::parameters::ClassicPBSParameters {
+  lwe_dimension: tfhe::shortint::parameters::LweDimension(900),
+  glwe_dimension: tfhe::shortint::parameters::GlweDimension(1),
+  polynomial_size: tfhe::shortint::parameters::PolynomialSize(1024),
+  lwe_modular_std_dev: tfhe::shortint::parameters::StandardDev(1.1641532182693481e-08),
+  glwe_modular_std_dev: tfhe::shortint::parameters::StandardDev(2.3283064365386963e-10),
+  pbs_base_log: tfhe::shortint::parameters::DecompositionBaseLog(12),
+  pbs_level: tfhe::shortint::parameters::DecompositionLevelCount(1),
+  ks_level: tfhe::shortint::parameters::DecompositionLevelCount(4),
+  ks_base_log: tfhe::shortint::parameters::DecompositionBaseLog(9),
+  message_modulus: tfhe::shortint::parameters::MessageModulus(2),
+  carry_modulus: tfhe::shortint::parameters::CarryModulus(1),
+  ciphertext_modulus: tfhe::shortint::parameters::CiphertextModulus::new_native(),
+  encryption_key_choice: tfhe::shortint::parameters::EncryptionKeyChoice::Big,
+};
+
+pub const PARAM_128: tfhe::shortint::parameters::ClassicPBSParameters = tfhe::shortint::parameters::ClassicPBSParameters {
+  lwe_dimension: tfhe::shortint::parameters::LweDimension(1200),
+  glwe_dimension: tfhe::shortint::parameters::GlweDimension(1),
+  polynomial_size: tfhe::shortint::parameters::PolynomialSize(2048),
+  lwe_modular_std_dev: tfhe::shortint::parameters::StandardDev(7.450580596923828e-09),
+  glwe_modular_std_dev: tfhe::shortint::parameters::StandardDev(1.1641532182693481e-10),
+  pbs_base_log: tfhe::shortint::parameters::DecompositionBaseLog(12),
+  pbs_level: tfhe::shortint::parameters::DecompositionLevelCount(1),
+  ks_level: tfhe::shortint::parameters::DecompositionLevelCount(4),
+  ks_base_log: tfhe::shortint::parameters::DecompositionBaseLog(9),
+  message_modulus: tfhe::shortint::parameters::MessageModulus(2),
+  carry_modulus: tfhe::shortint::parameters::CarryModulus(1),
+  ciphertext_modulus: tfhe::shortint::parameters::CiphertextModulus::new_native(),
+  encryption_key_choice: tfhe::shortint::parameters::EncryptionKeyChoice::Big,
+};
