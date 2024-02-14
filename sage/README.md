@@ -1,6 +1,6 @@
 # Sage implementation
 
-Instructions on how to use sage implementation
+Instructions on how to use sage implementation.
 
 ## Functionality
 
@@ -28,3 +28,7 @@ sage: c = oprf.blind_eval([0]*8) # Run blind evaluation of PRF over encrypted ci
 sage: vector([oprf.msbs.lwe_o.decrypt(c_) for c_ in c]) # Decrypt evaluated ciphertexts
 (1, 0, 2, 2, 1, 1, 0, 2, 2, 1, 2, 2) # Should be equivalent to non-blinded evaluation results
 ```
+
+## Missing functionality
+
+- Zero-knowledge proofs (i.e. not verifiable)

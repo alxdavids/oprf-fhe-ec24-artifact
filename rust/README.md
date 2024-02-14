@@ -76,3 +76,7 @@ to trigger sampling of a new key.
 
 ## Missing functionality
  
+- Circuit-private bootstrapping
+- Public-key compression
+- Zero-knowledge proofs (i.e. not verifiable)
+- Depth-one correctness (since modified test polynomials are not supported)
