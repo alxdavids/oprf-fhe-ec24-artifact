@@ -7,7 +7,6 @@ Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://g
 - [Benchmarking](#benchmarking)
 - [Example run](#example-run)
 
-
 ## Environment setup
 
 First, update your version of rust to the latest version:
@@ -41,12 +40,12 @@ Our benchmarks include performance measurements for client query generation, ser
 
 To benchmark the implementation (**WARNING: this could take a long time, and require large amounts of CPU and memory.**), you can use the following command:
 ```bash
-make bench-paper
+make bench
 ```
 
 The default number of threads used is 64. To alter the number of threads (e.g. to 16) that are used in the benchmark, you can use:
 ```bash
-THREADS=16 make bench-paper
+make THREADS=16 bench
 ```
 
 The benchmarking tool will generate a text file, where a standard output for a single piece of functionality takes the form below.
@@ -56,10 +55,15 @@ FHE OPRF benchmarks/Client: generate encrypted request (λ: "100")
 ```
 The numbers above can be interpreted as minimum, average, maximum. Each benchmark will run for `λ: "100"` and `λ: "128"` bits of security.
 
+To run the benchmarks in the same way that we used for the submission (i.e. comparing 64 threads vs single-threaded execution), use the command:
+```bash
+make bench-paper
+```
+
 ## Example run
 
 Debug run (including output of various runtime parameters):
-```
+```bash
 <OPTIONAL_ENV_VARIABLE>=<VALUE> cargo run --release
 ```
 
