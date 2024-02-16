@@ -77,7 +77,9 @@ class PRF:
             raise NotImplementedError
         self.F = WeakPRF(m_p=m_p, n_p=n_p, m_bound=m_bound, p=p, q=q, t=t, seed=seed)
         self.n = n
-        self.G_inp = identity_matrix(GF(q), n).stack(random_matrix(GF(q), (n_p - n) // 2, n))
+        self.G_inp = identity_matrix(GF(q), n).stack(
+            random_matrix(GF(q), (n_p - n) // 2, n)
+        )
 
     def __call__(self, x):
         x = vector(x).lift().change_ring(GF(self.F.q))
@@ -99,7 +101,7 @@ class OPRF(PRF):
         sage: set_random_seed(1337)
         sage: from tfhe import LWE
         sage: from oprf import OPRF
-        sage: oprf = OPRF(LWE(4, 3*127, "binary", 3.0, p=2))
+        sage: oprf = OPRF(LWE(4, 3*7681, "binary", 3.0, p=2))
         sage: oprf([0]*8)
         (1, 0, 2, 2, 1, 1, 0, 2, 2, 1, 2, 2)
         sage: c = oprf.blind_eval([0]*8)
