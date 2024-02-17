@@ -21,10 +21,17 @@ sage # enter sage environment
 sage: set_random_seed(1337)
 sage: from tfhe import LWE
 sage: from oprf import OPRF
-sage: oprf = OPRF(LWE(4, 3*127, "binary", 3.0, p=2))
+sage: oprf = OPRF(LWE(4, 3*7681, "binary", 3.0, p=2))
 sage: oprf([0]*8) # Standard non-blinded evaluation of PRF
 (1, 0, 2, 2, 1, 1, 0, 2, 2, 1, 2, 2) # Evaluation results
 sage: c = oprf.blind_eval([0]*8) # Run blind evaluation of PRF over encrypted ciphertexts
 sage: vector([oprf.msbs.lwe_o.decrypt(c_) for c_ in c]) # Decrypt evaluated ciphertexts
 (1, 0, 2, 2, 1, 1, 0, 2, 2, 1, 2, 2) # Should be equivalent to non-blinded evaluation results
+```
+
+
+## Running tests
+
+``` bash
+PYTHONPATH=`pwd` sage -tp *.py
 ```
