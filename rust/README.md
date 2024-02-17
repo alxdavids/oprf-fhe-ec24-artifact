@@ -9,15 +9,15 @@ Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://g
 
 ## Environment setup
 
-First, update your version of rust to the latest version:
+First, [install](https://www.rust-lang.org/tools/install) and/or update your version of rust to the latest version:
 ```bash
 rustup update
 ```
 
+## Building, testing, documentation
+
 The following commands can be used for building and running the code.
 Note that the `--release` flag is used to speed up compiled code.
-
-## Building, testing, documentation
 
 Build code binary:
 ```bash
