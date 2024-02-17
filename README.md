@@ -24,10 +24,10 @@
 The following summarises missing functionality from our implementations.
 
 **Sage code**:
-- Zero-knowledge proofs (i.e. not verifiable)
+- Zero-knowledge proofs (i.e. only semi-honest)
 
 **Rust code**:
-- Zero-knowledge proofs (i.e. not verifiable)
+- Zero-knowledge proofs (i.e. only semi-honest)
 - Circuit-private bootstrapping (since non-power-of-two `q` is not supported in tfhe-rs v0.3.1)
 - Depth-one correctness (since modified test polynomials and `p != 3` are not supported in tfhe-rs v0.3.1)
 - Public-key compression
