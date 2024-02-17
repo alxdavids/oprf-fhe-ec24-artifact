@@ -2,8 +2,8 @@
 
 **Description**: Software implementations of the oblivious pseudorandom function protocol
 
-- Sage (`sage/`): Near fully-featured implementation of protocol, demonstrating functionality and correctness of approach.
-- Rust (`rust/`): Benchmarking implementation for estimating performance of core oblivious pseudorandom function protocol.
+- [Sage](./sage) (`sage/`): Near fully-featured implementation of protocol, demonstrating functionality and correctness of approach.
+- [Rust](./rust) (`rust/`): Benchmarking implementation for estimating performance of core oblivious pseudorandom function protocol.
 
 **Paper** (full version): <https://eprint.iacr.org/2023/232>
 
