@@ -38,7 +38,7 @@ cargo doc --open --no-deps
 
 Our benchmarks include performance measurements for client query generation, server homomorphic PRF evaluation, and client finalisation of the output.
 
-To benchmark the implementation (**WARNING: this could take a long time, and require large amounts of CPU and memory.**), you can use the following command:
+To benchmark the implementation (**WARNING: this could take a long time, and require large amounts of CPU and memory**), you can use the following command:
 ```bash
 make bench
 ```
