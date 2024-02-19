@@ -8,7 +8,7 @@ resolver = "2"
 bitvec = "1"
 bincode = "1"
 serde = "1"
-tfhe = { version = "0.3.1", features = ["shortint", "x86_64-unix"] }
+tfhe = { version = "0.3.1", features = ["shortint"] }
 rand = "0.8.5"
 rand_core = "0.6.3"
 rayon = "1.5.3"

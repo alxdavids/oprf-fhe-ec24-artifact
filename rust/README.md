@@ -19,8 +19,6 @@ rustup update
 The following commands can be used for building and running the code.
 Note that the `--release` flag is used to speed up compiled code.
 
-If using an ARM processor, please change the tfhe feature "x86_64-unix" to "aarch64-unix" in [Cargo.toml](https://github.com/alxdavids/oprf-fhe-ec24-artifact/blob/main/rust/Cargo.toml).
-
 Build code binary:
 ```bash
 cargo build --release
