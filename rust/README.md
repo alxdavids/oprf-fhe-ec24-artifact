@@ -3,6 +3,7 @@
 Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://github.com/zama-ai/tfhe-rs/releases/tag/0.3.1) (version 0.3.1).
 
 - [Environment setup](#environment-setup)
+  - [ARM chips](#arm-chips)
 - [Building, testing, documentation](#building-testing-documentation)
 - [Benchmarking](#benchmarking)
 - [Example run](#example-run)
@@ -12,6 +13,26 @@ Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://g
 First, [install](https://www.rust-lang.org/tools/install) and/or update your version of rust to the latest version:
 ```bash
 rustup update
+```
+
+### ARM chips
+
+If your device is running on an ARM processor, you will have to modify the line in Cargo.toml that currently reads:
+
+```toml
+tfhe = { version = "0.5.0", features = ["shortint", "x86_64-unix"] }
+```
+
+to instead take the form below:
+
+```toml
+tfhe = { version = "0.5.0", features = ["shortint", "aarch64-unix"] }
+```
+
+If you hit errors, you can also try removing the feature completely:
+
+```toml
+tfhe = { version = "0.5.0", features = ["shortint"] }
 ```
 
 ## Building, testing, documentation
