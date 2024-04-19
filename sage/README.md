@@ -15,8 +15,8 @@ Instructions on how to use sage implementation.
 ```bash
 sage # enter sage environment
 ┌────────────────────────────────────────────────────────────────────┐
-│ SageMath version 9.4, Release Date: 2021-08-22                     │
-│ Using Python 3.9.5. Type "help()" for help.                        │
+│ SageMath version 10.2, Release Date: 2023-12-03                    │
+│ Using Python 3.11.8. Type "help()" for help.                       │
 └────────────────────────────────────────────────────────────────────┘
 sage: set_random_seed(1337)
 sage: from tfhe import LWE
@@ -35,3 +35,7 @@ sage: vector([oprf.msbs.lwe_o.decrypt(c_) for c_ in c]) # Decrypt evaluated ciph
 ``` bash
 PYTHONPATH=`pwd` sage -tp *.py
 ```
+
+## Sage version
+
+We tested our code with SageMath 10.2, installed in a Conda environment on a Debian GNU/Linux trixie system. 

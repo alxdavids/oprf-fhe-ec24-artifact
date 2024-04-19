@@ -21,7 +21,6 @@ from sage.all import (
     log,
     matrix,
     randint,
-    round,
     vector,
 )
 from sage.stats.distributions.discrete_gaussian_integer import (
@@ -160,7 +159,7 @@ class LWE:
 
             sage: D = LWE.normalize_distribution(3.0)
             sage: D
-            Discrete Gaussian sampler over the Integers with sigma = 3.000000 and c = 0.0...
+            Discrete Gaussian sampler over the Integers with sigma = 3.000000 and c = 0...
 
 
         """
@@ -287,7 +286,7 @@ class LWE:
         if raw:
             return z
         else:
-            return round(z / self.delta) % self.p
+            return (z / self.delta).round(mode="away") % self.p
 
 
 class GLWE(LWE):
@@ -383,7 +382,7 @@ class GLWE(LWE):
         if raw:
             return z
         z = z / self.delta
-        return self.R([round(z_) % self.p for z_ in list(z)])
+        return self.R([(z_).round(mode="away") % self.p for z_ in list(z)])
 
 
 class KeySwitching:
@@ -721,7 +720,7 @@ class BlindRotation(GGSW):
         N = ZZ(self.d)
         q = ZZ(self.q)
         ctxt = ctxt.lift()
-        ctxt = vector(ZZ, [round(2 * N / q * c_) for c_ in ctxt])
+        ctxt = vector(ZZ, [(2 * N / q * c_).round(mode="away") for c_ in ctxt])
         ctxt = ctxt.change_ring(IntegerModRing(2 * N))
         return ctxt
 
@@ -744,7 +743,7 @@ class BlindRotation(GGSW):
         v = []
         for j in range(self.d):
             j = (j + self.d // 4) % self.d
-            v.append(self.delta * (round((p * j) / (2 * N)) % p))
+            v.append(self.delta * (((p * j) / (2 * N)).round(mode="away") % p))
         return self.Rq(v) % self.phi
 
     def __call__(self, c, v=None, in_clear=False):
