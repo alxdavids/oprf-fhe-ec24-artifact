@@ -166,7 +166,7 @@ pub fn server_eval_partial(
 /// The `server_eval` runs the PRF detailed in Algorithm 1 of the paper.
 /// In other words, it computes the following steps:
 ///
-/// ```
+/// ```text
 /// // y <-- bit_decompose(G_inp * x (mod 3))
 /// // r <-- y * A (mod 2)
 /// // w <-- G_out * r (mod 3)  
