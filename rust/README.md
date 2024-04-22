@@ -6,6 +6,7 @@ Instructions on how to run Rust benchmarking software, using [tfhe-rs](https://g
   - [ARM chips](#arm-chips)
 - [Building, testing, documentation](#building-testing-documentation)
 - [Benchmarking](#benchmarking)
+  - [Potential warnings](#potential-warnings)
 - [Example run](#example-run)
 
 ## Environment setup
@@ -80,6 +81,14 @@ The numbers above can be interpreted as minimum, average, maximum. Each benchmar
 To run the benchmarks in the same way that we used for the submission (i.e. comparing 64 threads vs single-threaded execution), use the command:
 ```bash
 make bench-paper
+```
+
+### Potential warnings
+
+**Note:** There is a benign warning that may appear when running benchmarks of the form below, this is only to indicate that a particular benchmark will take longer to complete than usual, and is likely to occur for more expensive operations (e.g. server OPRF evaluation).
+
+```
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to X.Xs.
 ```
 
 ## Example run
